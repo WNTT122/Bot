@@ -1,0 +1,22 @@
+import type { IDiscordUser } from "../discord/IDiscordUser";
+import type { ICase } from "./ICase";
+import type { ICommentView } from "./ICommentView";
+import type { IUserNoteView } from "./IUserNoteView";
+import type { IVerifiedEvidence } from "./IVerifiedEvidence";
+
+export interface ICaseView {
+    modCase: ICase;
+    moderator: IDiscordUser;
+    lastModerator: IDiscordUser;
+    suspect: IDiscordUser;
+    lockedBy?: IDiscordUser;
+    deletedBy?: IDiscordUser;
+    comments: ICommentView[];
+    linkedCases: ICase[];
+    userNote: IUserNoteView;
+    punishmentProgress: number;
+    linkedEvidence: IVerifiedEvidence[];
+    mentionedUsers: any;
+    mentionedRoles: any;
+    mentionedChannels: any;
+}
